@@ -4,8 +4,8 @@ import { useMappedState } from "redux-react-hook"
 import TodoItem from "./TodoItem"
 
 const mapState = (state) => ({
-    lastUpdated: state.lastUpdated,
-    todoCount: state.todos.length,
+  lastUpdated: state.lastUpdated,
+  todoCount: state.todos.length,
 })
 
 const TodoList = () => {
@@ -14,11 +14,9 @@ const TodoList = () => {
     <div>
       <div className={styles.count}>You have {todoCount} todos</div>
       <ul className={styles.todos}>
-        {
-        new Array(todoCount).fill(null).map((c, index) => (
+        {new Array(todoCount).fill(null).map((c, index) => (
           <TodoItem index={index} key={index} />
-        ))
-        }
+        ))}
       </ul>
       <div className={styles.lastUpdated}>
         Last Updated:{" "}
