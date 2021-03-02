@@ -3,11 +3,11 @@ import React, { useCallback } from "react"
 import { useDispatch, useMappedState } from "redux-react-hook"
 import { deleteTodoAction } from "./action"
 
-const TodoItem = ({index}) => {
+const TodoItem = ({ index }) => {
   const mapState = useCallback((state) => state.todos[index], [index])
   const todo = useMappedState(mapState)
   const dispatch = useDispatch()
-  const deleteTodo = useCallback(() => dispatch(deleteTodoAction(index)))
+  const deleteTodo = useCallback(() => dispatch(deleteTodoAction(index)), [index])
 
   return (
     <li className={styles.root}>

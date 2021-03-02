@@ -1,7 +1,13 @@
 import { ADD_TODO, DELETE_TODO } from "./action"
 
-const reducer = (state, action) => {
+const initialState = {
+  lastUpdated: 0,
+  todos: [
+    'This is the 1st todo'
+  ]
+}
 
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO: {
       return {
